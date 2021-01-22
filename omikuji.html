@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head lang="ja">
+    <meta charset="utf-8">
+    <title>今日の運勢みくじ</title>
+    <style>
+        body{
+            background:#efefef ;
+            text-align: center;
+        }
+       #btn{
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          border-color: black;
+          background: red;
+          font-size: 42px;
+          font-weight: bold;
+          line-height: 200px;
+          color: white;
+          cursor: pointer;
+          margin: 30px auto;
+          box-shadow: 0 10px 0  #d1483d;
+          user-select: none;
+          
+       }
+       /* カーソルを当てた時の透明度 */
+       #btn:hover{
+           opacity: 0.8;
+       }
+
+       /* クリックされた時の処理 */
+       #btn:active{
+        box-shadow: 0 5px 0 #d1483d;
+        margin-top: 35px;
+       }
+
+    </style>
+    </head>
+
+    <body>
+        <h1>今日の運勢を占いましょう!</h1>
+       <div id='btn'>占う</div>
+        <script>
+          // 厳密なチェックをしてくれます
+          'use select';
+
+          const btn=document.getElementById('btn');
+          // クリックされた際の処理
+          btn.addEventListener('click',()=>{
+              const omikuji=['大吉','中吉','小吉','凶'];
+              btn.textContent=omikuji[Math.floor(Math.random()*omikuji.length)];
+          });
+        </script>
+    </body>
+</html>
